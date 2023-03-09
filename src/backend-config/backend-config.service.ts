@@ -3,8 +3,8 @@ import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class BackendConfigService {
-  private readonly nodeEnv: string;
-  private readonly port: string;
+  public readonly nodeEnv: string;
+  public readonly port: number;
   constructor(private readonly configService: ConfigService) {
     this.nodeEnv = this.get('NODE_ENV');
     this.port = Number(this.get('PORT'));
